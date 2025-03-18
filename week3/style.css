@@ -1,0 +1,62 @@
+* {
+  text-align: center;
+}
+
+h1 {
+  background-color: white;
+  margin-left: 200px;
+  margin-right: 10px;
+}
+
+h2 {
+  color: green;
+}
+
+p {
+  color: blue;
+}
+
+li {
+  color: aqua;
+}
+
+body {
+  background-image: url(photostrip.jpg);
+}
+
+.skrrt {
+  color: chartreuse;
+}
+/*wow*/
+
+#photostrip {
+  height: 900px;
+  width: 700px;
+  border: 15px solid whitesmoke;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section {
+  border: 1px solid blue;
+  background-color: aliceblue;
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+#skrrt {
+  font-family: "Emblema One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  background-color: aquamarine;
+  font-size: 5rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+/*
+erm
+
+*/
