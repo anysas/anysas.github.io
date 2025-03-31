@@ -1,3 +1,7 @@
+body {
+  display: flex;
+}
+
 #designer {
   font-family: "Inter", sans-serif;
   font-size: 0.9rem;
@@ -12,7 +16,7 @@
   border-bottom: black solid 1px;
   border-right: black solid 1px;
   padding: 15px;
-  padding-top: 24px;
+  padding-top: 25px;
 }
 
 #title {
@@ -20,6 +24,7 @@
   grid-row: 1/2;
   grid-column: 1/4;
   padding: 10px;
+  padding-bottom: 24px;
   border-left: none;
   border-top: none;
 }
@@ -28,22 +33,21 @@
   font-family: "Nunito Sans", sans-serif;
   color: black;
   text-decoration: none;
-  font-weight: 550;
-  font-size: 2.5rem;
-  line-height: 2.3rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.6rem;
 }
 
 #websitereview {
   font-family: "Inter", sans-serif;
   font-size: 1rem;
-  font-weight: 500;
-  margin-top: -14px;
+  font-weight: 450;
 }
 
 #sidebar {
   z-index: 1;
   width: 30vw;
-  height: 100vw;
+  height: 105vw;
   display: grid;
   background-color: white;
   position: fixed;
@@ -73,9 +77,6 @@
 #q11 {
   grid-area: 5/1/6/4;
 }
-body {
-  background-color: blue;
-}
 
 #q12 {
   grid-area: 6/1/7/3;
@@ -83,4 +84,48 @@ body {
 
 #q13 {
   grid-area: 6/3/7/5;
+}
+
+#scroll {
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+}
+
+.qbox {
+  padding-top: 15px;
+  border-bottom: solid 1px;
+  padding-left: 55px;
+}
+
+.question {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: underline;
+  width: 800px;
+  padding-left: 4rem;
+  padding-top: 0.65rem;
+}
+
+.dot {
+  position: relative;
+  left: 2rem;
+  top: 2.3rem;
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 1.3rem;
+  background: #000;
+}
+
+.answer {
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 460;
+  width: 800px;
+  padding-left: 4rem;
+  padding-bottom: 40px;
+  padding-top: 20px;
 }
