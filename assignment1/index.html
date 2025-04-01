@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
+    <!-- Division that holds sidebar items, such as the headings and question links. The title, designers, and questions each have their own divisions in order to control where they're placed in the grid. -->
     <div id="sidebar">
       <div id="title">
         <h1 id="assignmenttitle">A1-INTERACTIVE EXPERIENCE RESEARCH</h1>
@@ -34,7 +35,7 @@
           >
         </div>
       </div>
-
+      <!-- Each menu question has separate divison for grid placement. All divs are under menu_q class in order to give them the same font and padding. Within each division is a hyperlink that links to the ID's of the different question boxes. Some divisions have an id, such as q5, because I wanted to adjust how large it is in the grid.-->
       <div class="menu_q">
         <a href="#scrollq1">1</a>
       </div>
@@ -59,6 +60,7 @@
       <div class="menu_q" id="q13"><a href="#scrollq13">13</a></div>
     </div>
 
+    <!-- Division is named scroll as it's the scrollable area where the question boxes are located. Within scroll are qbox divisions, each with a dot, question, and answer classed divisions. This let me control the font and sizing of all questions and answers throughout all 13 question boxes. Each qbox division has an id to be used as an anchor in the hyperlinks on the menu.  -->
     <div id="scroll">
       <div class="qbox" id="scrollq1">
         <div class="dot"></div>
@@ -83,7 +85,7 @@
           2: Spend two minutes with the experience and create a list of each of
           your discrete actions.
         </div>
-
+        <!-- Used unordered list, and list items, to answer this question in a fitting manner.-->
         <div>
           <ul class="answer">
             <li>

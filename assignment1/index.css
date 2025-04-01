@@ -1,11 +1,8 @@
-body {
-  display: flex;
-}
-
+/* Creates a smooth scroll effect when clicking on menu hyperlinks that takes you to the different questions. */
 html {
   scroll-behavior: smooth;
 }
-
+/* Change the appearance of hyperlink that goes to MyoungAe's portfolio in order to fit in with the overall aesthetic of the website; removes the look of a blue underlined hyperlink. */
 #designer {
   font-family: "Inter", sans-serif;
   font-size: 0.9rem;
@@ -13,7 +10,7 @@ html {
   color: black;
   text-decoration: none;
 }
-
+/* Grid placement and padding of designer portfolio box. */
 #designercard {
   grid-row: 1/2;
   grid-column: 4/5;
@@ -23,6 +20,7 @@ html {
   padding-top: 25px;
 }
 
+/* Grid placement of title box which takes up a wider space. */
 #title {
   border: solid 1px;
   grid-row: 1/2;
@@ -33,6 +31,7 @@ html {
   border-top: none;
 }
 
+/* Control the font of assignment title. */
 #assignmenttitle {
   font-family: "Nunito Sans", sans-serif;
   color: black;
@@ -41,13 +40,13 @@ html {
   font-size: 1.5rem;
   line-height: 1.6rem;
 }
-
+/* Control the font of title subheading. */
 #websitereview {
   font-family: "Inter", sans-serif;
   font-size: 1rem;
   font-weight: 450;
 }
-
+/* Z index puts the sidebar division forward in comparision to the scrollable area. Adjust the width to take up 30% of the area, while going down the whole page in terms of height. Position fixed to top left so that it isn't scrolled away from. Create amount of rows and columns in the grid display.*/
 #sidebar {
   z-index: 1;
   width: 30vw;
@@ -60,7 +59,7 @@ html {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(12, 1fr);
 }
-
+/* Font, padding, and black border to menu items. Borders only on right and bottom to not create double borders that would create thicker lines in some areas. */
 .menu_q {
   font-family: "Inter", sans-serif;
   font-size: 0.8rem;
@@ -68,15 +67,13 @@ html {
   padding: 15px;
   border-right: 1px solid;
   border-bottom: solid 1px;
-  color: black;
-  text-decoration: none;
 }
-
+/* Removed blue colour, and underlines from hyperlinks. */
 a {
   color: black;
   text-decoration: none;
 }
-
+/* q5,10,11,12, have differing grid ratios, taking more space than just one row and grid. */
 #q5 {
   grid-area: 3/1/3/3;
 }
@@ -96,7 +93,7 @@ a {
 #q13 {
   grid-area: 6/3/7/5;
 }
-
+/* Scroll is where question boxes are placed; flex in order to stack the boxes ontop of eachother through column flex direction. Positioned to the right. */
 #scroll {
   width: 70vw;
   display: flex;
@@ -104,13 +101,13 @@ a {
   position: absolute;
   right: 0;
 }
-
+/* Separates questions and answers into question boxes with even padding and single bottom border to not create double borders. */
 .qbox {
   padding-top: 15px;
   border-bottom: solid 1px;
   padding-left: 55px;
 }
-
+/* Larger bolded font for questions themselves. */
 .question {
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.5rem;
@@ -121,7 +118,7 @@ a {
   padding-top: 0.65rem;
   align-self: center;
 }
-
+/* Create dot from background colour being rounded at the sides. Position relative to not effect the layout of the question divisions.*/
 .dot {
   position: relative;
   left: 2rem;
@@ -131,7 +128,7 @@ a {
   border-radius: 1.3rem;
   background: #000;
 }
-
+/* Controls the font and padding for answers. */
 .answer {
   font-family: "Inter", sans-serif;
   font-size: 0.8rem;
