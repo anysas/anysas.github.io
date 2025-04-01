@@ -119,6 +119,7 @@ a {
   width: 800px;
   padding-left: 4rem;
   padding-top: 0.65rem;
+  align-self: center;
 }
 
 .dot {
@@ -139,4 +140,5 @@ a {
   padding-left: 4rem;
   padding-bottom: 40px;
   padding-top: 20px;
+  align-self: center;
 }
