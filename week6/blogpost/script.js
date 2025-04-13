@@ -50,11 +50,11 @@ const container = document.querySelector("#grid-container");
 let postContent = "";
 for (let i = 0; i < blogPosts.length; i++) {
   postContent += `
-    <section id="box${i + 1}">
-      <h1>${blogPosts[i].title} </h1>
-      <p> ${blogPosts[i].content}</p>
-    </section>
-    `;
+      <section id="box${i + 1}">
+        <h1>${blogPosts[i].title} </h1>
+        <p> ${blogPosts[i].content}</p>
+      </section>
+      `;
 }
 
 // Fetching the posts using the forEach method
