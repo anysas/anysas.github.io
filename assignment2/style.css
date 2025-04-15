@@ -1,0 +1,79 @@
+:root {
+  background-color: rgb(156, 174, 210);
+  --main-blue: rgb(156, 174, 210);
+  --secondary-blue: rgb(22, 25, 66);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header {
+  background-color: var(--secondary-blue);
+  text-align: center;
+  width: 100%;
+}
+
+h1 {
+  font-family: "Mallanna", sans-serif;
+  color: var(--main-blue);
+}
+
+#title {
+  font-size: 3rem;
+  margin: 1px;
+}
+
+@keyframes waves {
+  from {
+    position: 0%;
+  }
+  to {
+    position: 1000px;
+  }
+}
+
+/* Followed a tutorial to create slow rolling waves. Link -> https://youtu.be/MMNEEdGa5eE?si=VN0J29Z3RZQ-_xp4 */
+
+section {
+  width: 100%;
+  bottom: 0;
+  overflow: hidden;
+}
+
+section .wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url(media/wave.png);
+  background-size: 1000px 100px;
+  opacity: 30%;
+}
+/* separate wave images have different timings to create layered effect */
+section .wave.wave1 {
+  animation: animate 30s linear infinite;
+}
+section .wave.wave2 {
+  animation: animate 15s linear infinite;
+  animation-delay: 5s;
+}
+section .wave.wave3 {
+  animation: animate 25s linear infinite;
+  animation-delay: 5s;
+}
+/* keyframe attributed to wave images to move from left to right*/
+@keyframes animate {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 1000px;
+  }
+}
