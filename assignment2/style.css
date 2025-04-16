@@ -41,7 +41,10 @@ h2 {
 }
 
 .container {
-  width: 500px;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .media-player {
@@ -78,7 +81,7 @@ button {
 }
 
 .progress-bar {
-  width: 420px;
+  width: 620px;
   height: 5px;
   border-radius: 3px;
   background-color: #d6d8de;
@@ -121,6 +124,49 @@ button {
   color: var(--tertiary-blue);
   margin: 0;
   font-size: 13px;
+  font-weight: bolder;
+}
+
+.timer {
+  background-color: rgb(226, 237, 243);
+  width: 80%;
+  height: 250px;
+  border-radius: 15px;
+  margin-top: 60px;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+}
+
+#study-timer-title {
+  font-size: 65px;
+  margin: 0;
+}
+
+#timerspan {
+  position: absolute;
+  margin-top: 40px;
+}
+
+#study-timer-span {
+  font-size: 100px;
+  color: var(--secondary-blue);
+  margin: 0;
+}
+
+.start-btn {
+  background-color: var(--secondary-blue);
+  border-radius: 15px;
+  margin-top: 65px;
+}
+
+#start-btn h2 {
+  color: var(--tertiary-blue);
+  margin: 0;
+  font-size: 23px;
+  padding-left: 60px;
+  padding-right: 60px;
   font-weight: bolder;
 }
 
