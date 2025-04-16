@@ -27,19 +27,35 @@
     <main class="container">
       <!-- audio player -->
       <div class="media-player">
-
-         <!-- audio title -->
+        <!-- audio title -->
         <div class="media-player-title">
           <h2 id="audiotitle">Ambient Wave - Erokia</h2>
         </div>
-        
+
         <!-- play/pause button -->
         <div class="play-pause-btn">
-          <button id="playbtn">
-            <img id="playbtn-img" src="media/play.png" alt="playbtn">
+          <button id="play-pause-btn">
+            <img id="playbtn-img" src="media/play.png" alt="playbtn" />
           </button>
         </div>
 
+        <!-- progress bar -->
+        <div class="progress-bar">
+          <span id="progress-bar-fill"></span>
+        </div>
+
+        <!-- loop button -->
+        <div class="loop-btn">
+          <button id="loop-btn">
+            <h2>LOOP</h2>
+          </button>
+        </div>
+
+        <!-- audio time -->
+        <div class="audio-timer">
+          <p id="audio-time-span">00:00</p>
+        </div>
+      </div>
     </main>
 
     <!-- Section for wave animtion -->
