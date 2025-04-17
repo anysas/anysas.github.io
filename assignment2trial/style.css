@@ -1,120 +1,204 @@
+/* Create colour palette for website. Consists of a monochrome blue to create a calming effect on users; the monochrome was chosen to ensure a non-distracting design to not take eyes away from studying. */
 :root {
-  --primary-bg-color: #f4f4f4;
-  --text-color: #333;
-  --main-bg-color: #333;
-  --main-text-color: #fff;
-  --main-btn-bg-color: #938989;
+  background-color: rgb(156, 174, 210);
+  --main-blue: rgb(156, 174, 210);
+  --secondary-blue: rgb(22, 25, 66);
+  --tertiary-blue: rgb(226, 237, 243);
 }
 
-body,
 h1,
-p,
-ul {
-  margin: 0;
-  padding: 0;
+h2,
+p {
+  font-family: mallanna;
 }
 
 body {
-  font-family: "Arial", sans-serif;
-  background-color: var(--primary-bg-color);
-  color: var(--text-color);
-  line-height: 1.6;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
 }
 
-/* Add additional styles as needed */
-
-/* Create a container for the main content */
-.container {
-  max-width: 1000px;
-  width: 100%;
-  padding: 10px;
-}
-
-/* Header styling */
 header {
-  background-color: var(--main-bg-color);
-  color: var(--main-text-color);
-  padding: 10px 0;
+  background-color: var(--secondary-blue);
   text-align: center;
   width: 100%;
 }
 
-/* Navigation styling */
-nav {
-  margin-top: 20px;
-  text-align: center;
+#title {
+  color: var(--main-blue);
+  font-size: 3.5rem;
+  margin: 0;
 }
 
-nav ul {
-  list-style: none;
+.container {
+  width: 700px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
 }
 
-nav ul li {
-  margin-right: 20px;
-}
-
-nav a {
-  text-decoration: none;
-  color: var(--text-color);
-}
-
-/* Media player styling */
 .media-player {
+  margin-top: 50px;
   width: 100%;
-  margin: 0 auto;
-}
-
-.media-player video {
-  max-width: 100%;
-}
-
-.custom-controls {
+  height: 120px;
+  border-radius: 30px;
+  background-color: var(--tertiary-blue);
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  margin-top: 10px;
-  width: 100%;
+  position: relative;
 }
 
-.custom-controls button {
-  background-color: var(--main-btn-bg-color);
-  color: var(--main-text-color);
-  border: none;
-  padding: 8px 12px;
+#audiotitle {
+  font-size: 1.8rem;
+  margin: 0;
+  color: var(--secondary-blue);
+}
+
+button {
   cursor: pointer;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
+  border: transparent;
 }
 
-.progress-bar {
+.player-top-items {
   width: 100%;
-  height: 10px;
-  background-color: #ddd;
-  margin-top: 10px;
-  overflow: hidden;
+  display: flex;
+  gap: 20px;
 }
 
-.progress-bar span {
+#play-pause-btn {
+  z-index: 1;
+  background-color: transparent;
+  align-self: flex-start;
+  position: relative;
+  left: 10px;
+  bottom: 10px;
+}
+
+.progressbar {
+  width: 620px;
+  height: 5px;
+  border-radius: 3px;
+  background-color: #d7dce3;
+  overflow: hidden;
+  margin-top: 6px;
+}
+
+.progressbar span {
   display: block;
   height: 100%;
-  background-color: var(--main-bg-color);
+  background-color: var(--secondary-blue);
+  border-radius: 3px;
   width: 0;
   transition: width 0.3s ease;
 }
 
-/* Footer styling */
-footer {
-  background-color: var(--main-bg-color);
-  color: var(--main-text-color);
-  text-align: center;
-  padding: 10px 0;
+.player-lower-items {
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 14px;
   width: 100%;
+  right: 22px;
+  top: 40px;
+}
+
+#loop-btn {
+  background-color: var(--secondary-blue);
+  color: var(--tertiary-blue);
+  border-radius: 10px;
+  font-family: Mallanna;
+  font-size: 1rem;
+  font-weight: bold;
+  height: 30px;
+}
+
+#audio-time-span {
+  font-family: Mallanna;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.timer {
+  margin-top: 65px;
+  width: 80%;
+  height: 250px;
+  border-radius: 30px;
+  background-color: var(--tertiary-blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+#study-timer-title {
+  font-size: 3rem;
+  margin: 0;
+  color: var(--secondary-blue);
+}
+
+#study-timer-span {
+  color: var(--main-blue);
+  font-size: 7rem;
+  margin: 0;
+  position: relative;
+  bottom: 80px;
+  margin-bottom: 10px;
+}
+
+#start-btn {
+  background-color: var(--secondary-blue);
+  color: var(--tertiary-blue);
+  border-radius: 10px;
+  font-family: Mallanna;
+  font-size: 1.4rem;
+  font-weight: bold;
+  position: relative;
+  bottom: 130px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+/* Followed a tutorial to create slow rolling waves. Link -> https://youtu.be/MMNEEdGa5eE?si=VN0J29Z3RZQ-_xp4 */
+
+section {
+  width: 100%;
+  bottom: 0;
+  overflow: hidden;
+}
+
+section .wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url(wave.png);
+  background-size: 1000px 100px;
+  opacity: 30%;
+}
+/* separate wave images have different timings to create layered effect */
+section .wave.wave1 {
+  animation: animate 30s linear infinite;
+}
+section .wave.wave2 {
+  animation: animate 15s linear infinite;
+  animation-delay: 5s;
+}
+section .wave.wave3 {
+  animation: animate 25s linear infinite;
+  animation-delay: 5s;
+}
+/* keyframe attributed to wave images to move from left to right*/
+@keyframes animate {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 1000px;
+  }
 }
