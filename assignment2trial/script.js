@@ -76,3 +76,52 @@ function replay() {
     ambientWave.play();
   }
 }
+
+// timer section: used https://www.youtube.com/watch?v=x7WJEmxNlEs&ab_channel=FlorinPop along with https://www.youtube.com/watch?v=IEk_5y-PIvo&t=141s&ab_channel=WebStylePress
+const studyTimer = document.querySelector("#study-timer-span");
+const startTimer = document.querySelector("#start-timer");
+const stopTimer = document.querySelector("#stop-timer");
+const resetTimer = document.querySelector("#reset-timer");
+
+// format and update time as 00:00
+const startingMinutes = 25;
+let time = startingMinutes * 60;
+let timerInterval = null;
+
+function updateCountdown() {
+  const minutes = Math.floor(time / 60);
+  let seconds = time % 60;
+
+  seconds = seconds < 10 ? "0" + seconds : seconds;
+
+  studyTimer.innerHTML = `${minutes}: ${seconds}`;
+}
+
+startTimer.addEventListener("click", startTiming);
+stopTimer.addEventListener("click", stopTiming);
+resetTimer.addEventListener("click", resetTiming);
+
+function startTiming() {
+  if (timerInterval) return; // Prevent multiple intervals
+  timerInterval = setInterval(() => {
+    if (time > 0) {
+      time--;
+      updateCountdown();
+    } else {
+      clearInterval(timerInterval);
+      timerInterval = null;
+      resetTimer();
+    }
+  }, 1000);
+}
+function stopTiming() {
+  clearInterval(timerInterval);
+  timerInterval = null;
+}
+function resetTiming() {
+  stopTiming();
+  time = 1500; // Reset to 5 minutes
+  updateCountdown();
+}
+updateCountdown();
+setInterval(updateTime, 1000); // Keep updating current time

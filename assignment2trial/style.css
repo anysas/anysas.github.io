@@ -166,7 +166,7 @@ button {
   margin-bottom: 10px;
 }
 
-#start-btn {
+.timerbtns {
   background-color: var(--secondary-blue);
   color: var(--tertiary-blue);
   border-radius: 10px;
