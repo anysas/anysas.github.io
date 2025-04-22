@@ -6,6 +6,10 @@
   --tertiary-blue: rgb(226, 237, 243);
 }
 
+audio {
+  z-index: 1;
+}
+
 h1,
 h2,
 p {
@@ -105,6 +109,18 @@ button {
   width: 100%;
   right: 22px;
   top: 40px;
+}
+
+.vol-buttons {
+  margin-top: 7px;
+}
+
+#vol-down {
+  background-color: transparent;
+}
+
+#vol-up {
+  background-color: transparent;
 }
 
 #loop-btn {
