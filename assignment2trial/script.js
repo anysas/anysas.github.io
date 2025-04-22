@@ -78,6 +78,8 @@ function replay() {
 }
 
 // timer section: used https://www.youtube.com/watch?v=x7WJEmxNlEs&ab_channel=FlorinPop along with https://www.youtube.com/watch?v=IEk_5y-PIvo&t=141s&ab_channel=WebStylePress
+
+// grabbing timer items
 const studyTimer = document.querySelector("#study-timer-span");
 const startTimer = document.querySelector("#start-timer");
 const stopTimer = document.querySelector("#stop-timer");
@@ -97,12 +99,15 @@ function updateCountdown() {
   studyTimer.innerHTML = `${minutes}: ${seconds}`;
 }
 
+// listening for clicking on timer buttons
 startTimer.addEventListener("click", startTiming);
 stopTimer.addEventListener("click", stopTiming);
 resetTimer.addEventListener("click", resetTiming);
 
 function startTiming() {
-  if (timerInterval) return; // Prevent multiple intervals
+  // makes sure that start doesn't make time go faster with additional intervals
+  if (timerInterval) return;
+  // time keeps udating aslong as it's above 0, otherwise interval gets cleared to stop timing.
   timerInterval = setInterval(() => {
     if (time > 0) {
       time--;
@@ -110,18 +115,24 @@ function startTiming() {
     } else {
       clearInterval(timerInterval);
       timerInterval = null;
-      resetTimer();
+      // change text once reaching 0 + stop the audio playing to alert users that study period is done.
+      studyTimer.innerHTML = "Break Time!";
+      ambientWave.pause();
     }
   }, 1000);
 }
+
 function stopTiming() {
   clearInterval(timerInterval);
   timerInterval = null;
 }
+
+// interval is stopped, then set back to 25 mins.
 function resetTiming() {
   stopTiming();
-  time = 1500; // Reset to 5 minutes
+  time = 1500;
   updateCountdown();
 }
+
 updateCountdown();
-setInterval(updateTime, 1000); // Keep updating current time
+setInterval(updateTime, 1000);
