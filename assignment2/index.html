@@ -28,51 +28,60 @@
       <!-- audio player -->
       <div class="media-player">
         <!-- audio title -->
-        <div class="media-player-title">
-          <h2 id="audiotitle">Ambient Wave - Erokia</h2>
-        </div>
+        <h2 id="audiotitle">Ambient Wave - Erokia</h2>
 
-        <!-- play/pause button -->
-        <div class="play-pause-btn">
+        <!-- audio file -->
+        <audio
+          id="ambientwave"
+          src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/erokia_ambient-wave-56-msfxp7-78.mp3"
+        ></audio>
+
+        <!-- top player items -->
+        <div class="player-top-items">
+          <!-- play/pause button -->
           <button id="play-pause-btn">
-            <img id="playbtn-img" src="media/play.png" alt="playbtn" />
+            <img id="play-pause-btn-img" src="play.png" alt="playbutton" />
           </button>
+
+          <!-- progress bar -->
+          <div class="progressbar">
+            <span id="progress-bar-fill"></span>
+          </div>
         </div>
 
-        <!-- progress bar -->
-        <div class="progress-bar">
-          <span id="progress-bar-fill"></span>
-        </div>
+        <!-- loop button and time span -->
+        <div class="player-lower-items">
+          <!-- volume buttons -->
+          <div class="vol-buttons">
+            <button id="vol-down">
+              <img src="volume down.png" alt="voldown" height="25px" />
+            </button>
 
-        <!-- loop button -->
-        <div class="loop-btn">
-          <button id="loop-btn">
-            <h2>LOOP</h2>
-          </button>
-        </div>
+            <button id="vol-up">
+              <img src="volume up.png" alt="volup" height="25px" />
+            </button>
+          </div>
 
-        <!-- audio time -->
-        <div class="audio-timer">
-          <p id="audio-time-span">00:00</p>
+          <!-- loop button -->
+          <button id="loop-btn">LOOP</button>
+
+          <!-- audio time -->
+          <p id="audio-time-span">0</p>
         </div>
       </div>
 
       <!-- timer section -->
       <div class="timer">
         <!-- timer title -->
-        <div id="timer-header">
-          <h1 id="study-timer-title">Study Timer</h1>
-        </div>
+        <h1 id="study-timer-title">Study Timer</h1>
 
         <!-- timer time span -->
-        <div id="timerspan">
-          <h1 id="study-timer-span">00:00</h1>
-        </div>
+        <h1 id="study-timer-span">00:06</h1>
 
-        <div class="start-btn">
-          <button id="start-btn">
-            <h2>START</h2>
-          </button>
+        <div id="timerbuttons">
+          <button class="timerbtns" id="start-timer">START</button>
+          <button class="timerbtns" id="stop-timer">STOP</button>
+          <button class="timerbtns" id="reset-timer">RESET</button>
         </div>
       </div>
     </main>

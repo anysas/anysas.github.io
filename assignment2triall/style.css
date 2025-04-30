@@ -6,16 +6,6 @@
   --tertiary-blue: rgb(226, 237, 243);
 }
 
-audio {
-  z-index: 1;
-}
-
-h1,
-h2,
-p {
-  font-family: mallanna;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -30,10 +20,24 @@ header {
   width: 100%;
 }
 
-#title {
+/* Mallanna font is round and sans-serif, fitting the simple and calm design. Roundness is similar to the soft waves. */
+h1,
+h2,
+p {
+  font-family: "Mallanna", sans-serif;
+}
+
+h1 {
   color: var(--main-blue);
-  font-size: 3.5rem;
-  margin: 0;
+}
+
+h2 {
+  color: var(--secondary-blue);
+}
+
+#title {
+  font-size: 3rem;
+  margin: 1px;
 }
 
 .container {
@@ -41,142 +45,129 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 30px;
 }
 
 .media-player {
-  margin-top: 50px;
+  background-color: rgb(226, 237, 243);
   width: 100%;
-  height: 120px;
-  border-radius: 30px;
-  background-color: var(--tertiary-blue);
+  height: 100px;
+  border-radius: 15px;
+  margin-top: 90px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
+  overflow: hidden;
+}
+
+.media-player-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 #audiotitle {
-  font-size: 1.8rem;
-  margin: 0;
-  color: var(--secondary-blue);
+  margin: 1px;
+  padding-left: 80px;
 }
 
 button {
-  cursor: pointer;
-  border: transparent;
-}
-
-.player-top-items {
-  width: 100%;
-  display: flex;
-  gap: 20px;
-}
-
-#play-pause-btn {
-  z-index: 1;
   background-color: transparent;
-  align-self: flex-start;
-  position: relative;
-  left: 10px;
-  bottom: 10px;
+  border: none;
+  cursor: pointer;
 }
 
-.progressbar {
+.play-pause-btn {
+  align-self: center;
+  position: absolute;
+  margin-left: 10px;
+}
+
+.progress-bar {
   width: 620px;
   height: 5px;
   border-radius: 3px;
-  background-color: #d7dce3;
+  background-color: #d6d8de;
   overflow: hidden;
-  margin-top: 6px;
+  align-self: center;
+  position: absolute;
+  margin-left: 58px;
 }
 
-.progressbar span {
+.progress-bar span {
   display: block;
   height: 100%;
   background-color: var(--secondary-blue);
-  border-radius: 3px;
   width: 0;
   transition: width 0.3s ease;
 }
 
-.player-lower-items {
-  position: absolute;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 14px;
-  width: 100%;
-  right: 22px;
-  top: 40px;
-}
-
-.vol-buttons {
-  margin-top: 7px;
-}
-
-#vol-down {
-  background-color: transparent;
-}
-
-#vol-up {
-  background-color: transparent;
-}
-
-#loop-btn {
-  background-color: var(--secondary-blue);
-  color: var(--tertiary-blue);
-  border-radius: 10px;
-  font-family: Mallanna;
-  font-size: 1rem;
-  font-weight: bold;
-  height: 30px;
+.audio-timer {
+  align-self: flex-end;
+  position: relative;
+  right: 20px;
+  top: 10px;
 }
 
 #audio-time-span {
-  font-family: Mallanna;
-  font-size: 1.5rem;
+  font-size: 20px;
   font-weight: bold;
+}
+
+.loop-btn {
+  align-self: flex-end;
+  position: relative;
+  bottom: 15px;
+  right: 28px;
+  background-color: var(--secondary-blue);
+  border-radius: 10px;
+}
+
+#loop-btn h2 {
+  color: var(--tertiary-blue);
+  margin: 0;
+  font-size: 13px;
+  font-weight: bolder;
 }
 
 .timer {
-  margin-top: 65px;
+  background-color: rgb(226, 237, 243);
   width: 80%;
   height: 250px;
-  border-radius: 30px;
-  background-color: var(--tertiary-blue);
+  border-radius: 15px;
+  margin-top: 60px;
   display: flex;
+  overflow: hidden;
   flex-direction: column;
   align-items: center;
-  position: relative;
 }
 
 #study-timer-title {
-  font-size: 3rem;
+  font-size: 65px;
   margin: 0;
-  color: var(--secondary-blue);
+}
+
+#timerspan {
+  position: absolute;
+  margin-top: 40px;
 }
 
 #study-timer-span {
-  color: var(--main-blue);
-  font-size: 7rem;
+  font-size: 100px;
+  color: var(--secondary-blue);
   margin: 0;
-  position: relative;
-  bottom: 80px;
-  margin-bottom: 10px;
 }
 
-.timerbtns {
+.start-btn {
   background-color: var(--secondary-blue);
+  border-radius: 15px;
+  margin-top: 65px;
+}
+
+#start-btn h2 {
   color: var(--tertiary-blue);
-  border-radius: 10px;
-  font-family: Mallanna;
-  font-size: 1.4rem;
-  font-weight: bold;
-  position: relative;
-  bottom: 130px;
-  padding-left: 40px;
-  padding-right: 40px;
+  margin: 0;
+  font-size: 23px;
+  padding-left: 60px;
+  padding-right: 60px;
+  font-weight: bolder;
 }
 
 /* Followed a tutorial to create slow rolling waves. Link -> https://youtu.be/MMNEEdGa5eE?si=VN0J29Z3RZQ-_xp4 */
@@ -193,7 +184,7 @@ section .wave {
   left: 0;
   width: 100%;
   height: 100px;
-  background: url(wave.png);
+  background: url(media/wave.png);
   background-size: 1000px 100px;
   opacity: 30%;
 }
