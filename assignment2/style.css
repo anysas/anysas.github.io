@@ -62,6 +62,7 @@ header {
   color: var(--secondary-blue);
 }
 
+/* Buttons are assigned the pointer cursor to let them know that the items are clickable */
 button {
   cursor: pointer;
   border: transparent;
@@ -179,7 +180,7 @@ button {
   padding-right: 40px;
 }
 
-/* Followed a tutorial to create slow rolling waves. Link -> https://youtu.be/MMNEEdGa5eE?si=VN0J29Z3RZQ-_xp4 */
+/* Followed a tutorial to create rolling waves. Link -> https://youtu.be/MMNEEdGa5eE?si=VN0J29Z3RZQ-_xp4 */
 
 section {
   width: 100%;
@@ -197,7 +198,7 @@ section .wave {
   background-size: 1000px 100px;
   opacity: 30%;
 }
-/* separate wave images have different timings to create layered effect */
+/* separate wave images have different timings to create layered effect. Overall timings are slow to not be distracting, but is soothing to ocassionaly look at. The graphic isn't striking so it wouldn't be stared at for long periods of time.*/
 section .wave.wave1 {
   animation: animate 30s linear infinite;
 }

@@ -115,16 +115,11 @@ function startTiming() {
     } else {
       clearInterval(timerInterval);
       timerInterval = null;
-      // change text once reaching 0 + stop the audio playing to alert users that study period is done.
+      // change text to 'break time' once reaching 0 + stop the audio playing to break immersion when studying, therefore alerting users that their study time is finished for now.
       studyTimer.innerHTML = "Break Time!";
       ambientWave.pause();
     }
   }, 1000);
-}
-
-function stopTiming() {
-  clearInterval(timerInterval);
-  timerInterval = null;
 }
 
 // interval is stopped, then set back to 25 mins.
@@ -136,3 +131,9 @@ function resetTiming() {
 
 updateCountdown();
 setInterval(updateTime, 1000);
+
+// clears interval to not update the timer; stop or pause timer when triggered
+function stopTiming() {
+  clearInterval(timerInterval);
+  timerInterval = null;
+}
