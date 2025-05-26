@@ -1,0 +1,19 @@
+/* Striped background... */
+body {
+  height: 95vh;
+  background: repeating-linear-gradient(
+    90deg,
+    #fff4f9,
+    #fff4f9 60px,
+    #ffffff 60px,
+    #ffffff 99px
+  );
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.frontmannequin {
+  height: 680px;
+  margin: 80px;
+}
