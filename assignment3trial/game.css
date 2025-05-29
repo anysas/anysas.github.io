@@ -10,7 +10,7 @@ body {
     #ffffff 49px
   );
   display: grid;
-  grid-template-columns: 5fr 3fr 5fr;
+  grid-template-columns: 4fr 3fr 4fr;
 }
 
 h2,
@@ -30,8 +30,8 @@ h2 {
   background-size: cover;
   background-position: right;
   overflow: hidden;
-  /*  */
   grid-column: 1 / span 1;
+  /*  */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,6 +48,8 @@ h2 {
 #bodicebox img {
   width: 100%;
   height: auto;
+  margin-bottom: 20px;
+  cursor: pointer;
 }
 
 #skirtmenu {
@@ -56,12 +58,25 @@ h2 {
   background-position: left;
   overflow: hidden;
   grid-column: 3 / span 1;
+  /*  */
   display: flex;
-  justify-content: center;
-  right: 10px;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
 }
 
 #skirtbox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 80%;
+  column-gap: 50px;
+}
+
+#skirtbox img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 25px;
+  cursor: pointer;
 }
 
 section {
