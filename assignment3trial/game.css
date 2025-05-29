@@ -10,7 +10,7 @@ body {
     #ffffff 49px
   );
   display: grid;
-  grid-template-columns: 4fr 3fr 4fr;
+  grid-template-columns: 5fr 3fr 5fr;
 }
 
 h2,
@@ -18,9 +18,50 @@ button {
   font-family: "Noto Serif", serif;
 }
 
+h2 {
+  margin: 20px 0 10px 0;
+  font-size: 5rem;
+  font-weight: 400;
+  text-decoration: underline 3px;
+}
+
 #bodicemenu {
   background-image: url(webassets/bodicemenu@3x.png);
+  background-size: cover;
+  background-position: right;
+  overflow: hidden;
+  /*  */
   grid-column: 1 / span 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+#bodicebox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 70%;
+  column-gap: 50px;
+}
+
+#bodicebox img {
+  width: 100%;
+  height: auto;
+}
+
+#skirtmenu {
+  background-image: url(webassets/skirtsmenu@3x.png);
+  background-size: cover;
+  background-position: left;
+  overflow: hidden;
+  grid-column: 3 / span 1;
+  display: flex;
+  justify-content: center;
+  right: 10px;
+}
+
+#skirtbox {
 }
 
 section {
@@ -41,9 +82,4 @@ section {
   border-radius: 10px;
   border: 2px solid white;
   outline: 3px solid black;
-}
-
-#skirtmenu {
-  background-image: url(webassets/bodicemenu@3x.png);
-  grid-column: 3 / span 1;
 }
