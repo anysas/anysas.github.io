@@ -5,6 +5,8 @@ const skirtPieces = document.querySelectorAll("#skirtbox img");
 const bodiceDrop = document.getElementById("bodice_droparea");
 const skirtDrop = document.getElementById("skirt_droparea");
 
+// const scribble = new Audio("webassets/scribble.mp3");
+
 // lets bodice be an empty value to be replaced later
 let bodice = null;
 
@@ -33,6 +35,10 @@ bodiceDrop.addEventListener("drop", (event) => {
   bodicePlaced.src = bodice;
   // the taken bodice becomes gets inserted into bodiceDrop as a child element
   bodiceDrop.appendChild(bodicePlaced);
+
+  // Play sound
+  // scribble.currentTime = 0; // rewind to start
+  // scribble.play();
 });
 
 // used same code for skirts

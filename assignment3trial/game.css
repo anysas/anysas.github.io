@@ -92,6 +92,10 @@ section {
   bottom: 10px;
 }
 
+button:hover {
+  transform: scale(0.9);
+}
+
 #bodice_droparea {
   /* background-color: blue; */
   position: absolute;
@@ -117,3 +121,5 @@ section {
   left: 619px;
   z-index: 1;
 }
+
+/* animations */
