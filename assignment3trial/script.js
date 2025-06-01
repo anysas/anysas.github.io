@@ -1,51 +1,59 @@
-// script.js
-
-// Select all draggable pieces and drop areas
+// grabbing the clothing pieces
 const bodicePieces = document.querySelectorAll("#bodicebox img");
 const skirtPieces = document.querySelectorAll("#skirtbox img");
+// grabbing the dropareas
 const bodiceDrop = document.getElementById("bodice_droparea");
 const skirtDrop = document.getElementById("skirt_droparea");
 
-// Currently dragged image source
-let draggedImageSrc = "";
-let draggedType = "";
+// lets bodice be an empty value to be replaced later
+let bodice = null;
 
-// Set up drag start
-function setupDrag(pieces, type) {
-  pieces.forEach((piece) => {
-    piece.addEventListener("dragstart", (e) => {
-      draggedImageSrc = e.target.src;
-      draggedType = type;
-    });
+// every bodice piece image is given an  event listener that looks out for the start of drag action, which will change the empty bodice value to turn into the image of the event trigger.
+bodicePieces.forEach((img) => {
+  img.addEventListener("dragstart", (event) => {
+    bodice = event.target.src;
   });
-}
+});
 
-// Allow drop
-function allowDrop(e) {
-  e.preventDefault();
-}
+// allows drag and drop
+bodiceDrop.addEventListener("dragover", (event) => {
+  event.preventDefault();
+});
+bodiceDrop.addEventListener("drop", (event) => {
+  event.preventDefault();
+  if (!bodice) return;
 
-// Handle drop
-function handleDrop(e, dropArea, type) {
-  e.preventDefault();
-  if (draggedType !== type) return; // Prevent wrong type drops
+  //  bodice images in bodice drop are cleared, so images replace eachother
+  bodiceDrop.innerHTML = "";
 
-  // Clear previous image
-  dropArea.innerHTML = "";
+  // puts the bodice in
+  // creates a new bodice image to keep it shown in the menu
+  const bodicePlaced = document.createElement("img");
+  // the new element has the image data of the dragged
+  bodicePlaced.src = bodice;
+  // the taken bodice becomes gets inserted into bodiceDrop as a child element
+  bodiceDrop.appendChild(bodicePlaced);
+});
 
-  // Add new image
-  const img = document.createElement("img");
-  img.src = draggedImageSrc;
-  dropArea.appendChild(img);
-}
+// used same code for skirts
+let skirt = null;
 
-// Initialize drag and drop
-setupDrag(bodicePieces, "bodice");
-setupDrag(skirtPieces, "skirt");
+skirtPieces.forEach((img) => {
+  img.addEventListener("dragstart", (event) => {
+    skirt = event.target.src;
+  });
+});
 
-// Setup dropzones
-bodiceDrop.addEventListener("dragover", allowDrop);
-bodiceDrop.addEventListener("drop", (e) => handleDrop(e, bodiceDrop, "bodice"));
+skirtDrop.addEventListener("dragover", (event) => {
+  event.preventDefault();
+});
+skirtDrop.addEventListener("drop", (event) => {
+  event.preventDefault();
+  if (!skirt) return;
 
-skirtDrop.addEventListener("dragover", allowDrop);
-skirtDrop.addEventListener("drop", (e) => handleDrop(e, skirtDrop, "skirt"));
+  skirtDrop.innerHTML = "";
+
+  const skirtPlaced = document.createElement("img");
+  skirtPlaced.src = skirt;
+  skirtDrop.appendChild(skirtPlaced);
+});
