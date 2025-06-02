@@ -1,8 +1,10 @@
 body {
   margin: 0;
   height: 100vh;
+  /* hides overflow from animations and such that would extend the page */
   overflow-y: hidden;
   overflow-x: hidden;
+  /* white and pink striped background for a boutique aesthetic */
   background: repeating-linear-gradient(
     90deg,
     #fff4f9,
@@ -14,6 +16,7 @@ body {
   grid-template-columns: 4fr 3fr 4fr;
 }
 
+/* Text assigned Noto Serif */
 h1,
 h2,
 button {
@@ -35,6 +38,7 @@ aside {
   height: 100%;
 }
 
+/* bodice menu assigned custom images for background to have the scalloped edges. Give it a cute yet classy touch. */
 #bodicemenu {
   background-image: url(webassets/bodicemenu@3x.png);
   background-size: cover;
@@ -52,11 +56,13 @@ aside {
 #bodicebox,
 #skirtbox {
   display: grid;
+  /* Items go down the columns */
   grid-template-columns: 1fr 1fr;
   width: 70%;
   column-gap: 50px;
 }
 
+/* Was struggling previously with my first skirt and bodice drawings because they all had varying sizes which made it difficult as I didn't know how to adjust each individual size and height when placing. */
 #bodicebox img,
 #skirtbox img {
   width: 110%;
@@ -66,6 +72,7 @@ aside {
   z-index: 2;
 }
 
+/* space out skirts evenly since they aren't as tall compared to bodices */
 #skirtbox {
   row-gap: 40px;
 }
@@ -78,7 +85,7 @@ section {
   align-items: center;
   margin-top: 20px;
 }
-
+/* Button given a border to make it look stylish. */
 #finbtn {
   font-size: 1.5rem;
   text-decoration: underline;
@@ -94,12 +101,13 @@ section {
   bottom: 20px;
 }
 
+/* Button scaled down when hovering to give effect of real button being pressed */
 button:hover {
   transform: scale(0.9);
 }
 
 #bodice_droparea {
-  /* background-color: blue; */
+  /* background-color: blue; Used this to help me position the box over the mannequin. Had to be specific with positioning so the clothes could be placed exactly ontop of the mannequin how I want it to.*/
   position: relative;
   height: 180px;
   width: 162px;
@@ -108,6 +116,7 @@ button:hover {
   z-index: 2;
 }
 
+/* Placed images take the entire box area */
 #bodice_droparea img,
 #skirt_droparea img {
   width: 100%;
@@ -126,7 +135,7 @@ button:hover {
 
 /* animations for ending the game */
 
-/* moving the menus to the side */
+/* moving items to the side*/
 .moveAside {
   animation: moveAside 1s ease-out forwards;
 }
@@ -140,6 +149,7 @@ button:hover {
   }
 }
 
+/* making items clear */
 .clearOpacity {
   animation: turnClear 1s ease-out forwards;
 }
@@ -153,6 +163,7 @@ button:hover {
   }
 }
 
+/* Giving the extended menu created in javascript its color and size. */
 #extendedmenu {
   position: absolute;
   left: 0;
@@ -161,6 +172,7 @@ button:hover {
   width: 50vw;
 }
 
+/* menu extension moving as the other items move to the side */
 .menuExtension {
   animation: menuExtend 1s ease-out forwards;
 }
@@ -174,6 +186,7 @@ button:hover {
   }
 }
 
+/* For added text in javascript. Made it somewhat big to take more space in the extended menu. */
 #comingsoon {
   font-weight: 400;
   position: absolute;
@@ -185,6 +198,7 @@ button:hover {
   text-align: center;
 }
 
+/* Button styling */
 #makeanother {
   font-size: 2rem;
   text-decoration: underline;
@@ -200,6 +214,7 @@ button:hover {
   bottom: 300px;
 }
 
+/* To make items appear  */
 .showOpacity {
   animation: show 1s ease-out 600ms forwards;
 }

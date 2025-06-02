@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="game.css" />
     <script src="script.js" defer></script>
 
+    <!-- Connect to Noto font; serif font for a classy appearance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,9 +15,12 @@
       rel="stylesheet"
     />
   </head>
+
   <body>
+    <!-- Site is separated into 3 sections; an aside, a section, and another aside. The aside are menus where players can pull the bodice and skirt pieces from, and the section is where the items can be dragged into. This layout having the mannequin in the center informs users that the items on the side needs to meet in the middle. -->
     <aside id="bodicemenu">
       <h2>Bodice</h2>
+      <!-- Images assigned with draggable=true to allow drag and drop to occur later. -->
       <div id="bodicebox">
         <img
           src="webassets/bodices/bodice1@2x.png"
@@ -52,8 +56,10 @@
     </aside>
 
     <section>
+      <!-- Entire dropzone -->
       <div id="dropzone">
         <img src="webassets/mannequin@2x.png" alt="mannequin" height="700px" />
+        <!-- separate dropzones for bodice and skirt -->
         <div id="bodice_droparea"></div>
         <div id="skirt_droparea"></div>
       </div>

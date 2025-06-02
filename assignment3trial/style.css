@@ -55,3 +55,7 @@ button {
   outline: 5px solid black;
   width: 300px;
 }
+
+button:hover {
+  transform: scale(0.9);
+}
