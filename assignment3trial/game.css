@@ -14,6 +14,7 @@ body {
   grid-template-columns: 4fr 3fr 4fr;
 }
 
+h1,
 h2,
 button {
   font-family: "Noto Serif", serif;
@@ -170,5 +171,44 @@ button:hover {
   }
   to {
     transform: translateX(580px);
+  }
+}
+
+#comingsoon {
+  font-weight: 400;
+  position: absolute;
+  left: 200px;
+  bottom: 310px;
+  font-size: 5rem;
+  width: 600px;
+  color: black;
+  text-align: center;
+}
+
+#makeanother {
+  font-size: 2rem;
+  text-decoration: underline;
+  padding: 0px 20px;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  border: 2px solid white;
+  outline: 3px solid black;
+  position: absolute;
+  left: 380px;
+  bottom: 300px;
+}
+
+.showOpacity {
+  animation: show 1s ease-out 600ms forwards;
+}
+
+@keyframes show {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
   }
 }

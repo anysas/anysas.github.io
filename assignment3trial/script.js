@@ -79,7 +79,7 @@ finishBtn.addEventListener("click", function () {
   skirtMenu.classList.add("moveAside");
   bodiceMenu.classList.add("moveAside");
   dropZone.classList.add("moveAside");
-  finishBtn.classList.add("moveAside");
+  finishBtn.remove();
 
   bodiceBox.classList.add("clearOpacity");
   finishBtn.classList.add("clearOpacity");
@@ -90,6 +90,23 @@ finishBtn.addEventListener("click", function () {
   document.body.appendChild(extendedMenu);
   extendedMenu.style.left = "-700px";
   extendedMenu.classList.add("menuExtension");
+
+  const makeAnother = document.createElement("button");
+  makeAnother.id = "makeanother";
+  document.body.appendChild(makeAnother);
+  makeAnother.innerHTML = "Design another";
+  makeAnother.classList.add("showOpacity");
+  makeAnother.style.opacity = "0%";
+  makeAnother.addEventListener("click", () => {
+    window.location.href = "index.html";
+  });
+
+  const comingSoon = document.createElement("h1");
+  comingSoon.id = "comingsoon";
+  document.body.appendChild(comingSoon);
+  comingSoon.innerHTML = "Coming this Spring season!";
+  comingSoon.classList.add("showOpacity");
+  comingSoon.style.opacity = "0%";
 });
 
 bodiceBox.addEventListener("animationend", () => {
