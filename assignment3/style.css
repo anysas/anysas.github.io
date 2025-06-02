@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: repeating-linear-gradient(
+    90deg,
+    #fff4f9,
+    #fff4f9 60px,
+    #ffffff 60px,
+    #ffffff 99px
+  );
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow-y: hidden;
+}
+
+.mannequins {
+  height: 650px;
+  margin: 0px 80px 0px 80px;
+}
+
+#landingpg_center {
+  height: 100vh;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+h1,
+button {
+  font-family: "Noto Serif", serif;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 6rem;
+  margin-bottom: 15px;
+}
+
+button {
+  color: white;
+  cursor: pointer;
+  background-color: black;
+}
+
+#startbtn {
+  font-size: 5rem;
+  font-weight: 300;
+  border-radius: 20px;
+  text-decoration: underline 3px;
+  border: 5px solid white;
+  outline: 5px solid black;
+  width: 300px;
+}
+
+button:hover {
+  transform: scale(0.9);
+}
