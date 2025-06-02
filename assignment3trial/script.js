@@ -4,8 +4,12 @@ const skirtPieces = document.querySelectorAll("#skirtbox img");
 // grabbing the dropareas
 const bodiceDrop = document.getElementById("bodice_droparea");
 const skirtDrop = document.getElementById("skirt_droparea");
-
-// const scribble = new Audio("webassets/scribble.mp3");
+// grabbing audio from webassets
+// https://pixabay.com/sound-effects/shine-7-268909/
+const shine = new Audio("webassets/shine.mp3");
+// https://pixabay.com/sound-effects/shining-anime-sound-effect-240582/
+// Was originally gonna use a fabric or sketching noise when dropping the pieces in but it contrasted alot against the aesthetic I was going for, being that it sounded dull in comparison to the light background. So instead I used this sound effect which sounds like a far away or a less bright glitter. This creates the feeling of the player is on the verge of making a dress idea, then finalising the dress idea/mockup is alot brighter as the creative process is done.
+const dullshine = new Audio("webassets/dullshine.mp3");
 
 // lets bodice be an empty value to be replaced later
 let bodice = null;
@@ -36,9 +40,8 @@ bodiceDrop.addEventListener("drop", (event) => {
   // the taken bodice becomes gets inserted into bodiceDrop as a child element
   bodiceDrop.appendChild(bodicePlaced);
 
-  // Play sound
-  // scribble.currentTime = 0; // rewind to start
-  // scribble.play();
+  dullshine.currentTime = 0;
+  dullshine.play();
 });
 
 // used same code for skirts
@@ -62,6 +65,9 @@ skirtDrop.addEventListener("drop", (event) => {
   const skirtPlaced = document.createElement("img");
   skirtPlaced.src = skirt;
   skirtDrop.appendChild(skirtPlaced);
+
+  dullshine.currentTime = 0;
+  dullshine.play();
 });
 
 // applying the animations
@@ -76,6 +82,9 @@ const menuHeading = document.querySelector("h2");
 
 // When finish button is clicked the website screen transforms into the end screen through items moving to the left side, having them disappear, and creating new text and button.
 finishBtn.addEventListener("click", function () {
+  // when button is pressed, a sparkly noise is played; this creates relief and the feeling of fulfillment as it has a bright sound.
+  shine.currentTime = 0;
+  shine.play();
   // Both menus and dropzone moved to the side
   skirtMenu.classList.add("moveAside");
   bodiceMenu.classList.add("moveAside");
