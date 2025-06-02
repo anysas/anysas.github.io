@@ -2,6 +2,7 @@ body {
   margin: 0;
   height: 100vh;
   overflow-y: hidden;
+  overflow-x: hidden;
   background: repeating-linear-gradient(
     90deg,
     #fff4f9,
@@ -87,9 +88,9 @@ section {
   border-radius: 10px;
   border: 2px solid white;
   outline: 3px solid black;
-  position: relative;
-  left: 140px;
-  bottom: 10px;
+  position: absolute;
+  left: 810px;
+  bottom: 20px;
 }
 
 button:hover {
@@ -98,11 +99,11 @@ button:hover {
 
 #bodice_droparea {
   /* background-color: blue; */
-  position: absolute;
+  position: relative;
   height: 180px;
   width: 162px;
-  bottom: 491px;
-  left: 639px;
+  bottom: 632px;
+  left: 10.5px;
   z-index: 2;
 }
 
@@ -114,12 +115,60 @@ button:hover {
 
 #skirt_droparea {
   /* background-color: purple; */
-  position: absolute;
+  position: relative;
   height: 170px;
   width: 203px;
-  bottom: 391px;
-  left: 619px;
+  bottom: 702px;
+  left: -9.8px;
   z-index: 1;
 }
 
-/* animations */
+/* animations for ending the game */
+
+/* moving the menus to the side */
+.moveAside {
+  animation: moveAside 1s ease-out forwards;
+}
+
+@keyframes moveAside {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(530px);
+  }
+}
+
+.clearOpacity {
+  animation: turnClear 1s ease-out forwards;
+}
+
+@keyframes turnClear {
+  from {
+    opacity: auto;
+  }
+  to {
+    opacity: 0%;
+  }
+}
+
+#extendedmenu {
+  position: absolute;
+  left: 0;
+  background-color: #fff4f9;
+  height: 100vh;
+  width: 50vw;
+}
+
+.menuExtension {
+  animation: menuExtend 1s ease-out forwards;
+}
+
+@keyframes menuExtend {
+  from {
+    transform: translateX(-700);
+  }
+  to {
+    transform: translateX(580px);
+  }
+}

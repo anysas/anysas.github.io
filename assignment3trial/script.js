@@ -63,3 +63,39 @@ skirtDrop.addEventListener("drop", (event) => {
   skirtPlaced.src = skirt;
   skirtDrop.appendChild(skirtPlaced);
 });
+
+// applying the animations
+// grabbing components
+const finishBtn = document.querySelector("#finbtn");
+const skirtMenu = document.querySelector("#skirtmenu");
+const bodiceMenu = document.querySelector("#bodicemenu");
+const dropZone = document.querySelector("#dropzone");
+
+const bodiceBox = document.querySelector("#bodicebox");
+const menuHeading = document.querySelector("h2");
+
+// apply animation when ever
+finishBtn.addEventListener("click", function () {
+  skirtMenu.classList.add("moveAside");
+  bodiceMenu.classList.add("moveAside");
+  dropZone.classList.add("moveAside");
+  finishBtn.classList.add("moveAside");
+
+  bodiceBox.classList.add("clearOpacity");
+  finishBtn.classList.add("clearOpacity");
+  menuHeading.classList.add("clearOpacity");
+
+  const extendedMenu = document.createElement("div");
+  extendedMenu.id = "extendedmenu";
+  document.body.appendChild(extendedMenu);
+  extendedMenu.style.left = "-700px";
+  extendedMenu.classList.add("menuExtension");
+});
+
+bodiceBox.addEventListener("animationend", () => {
+  bodiceBox.remove();
+});
+
+menuHeading.addEventListener("animationend", () => {
+  menuHeading.remove();
+});
