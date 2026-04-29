@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify Browser Mockup</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      * {
+        transition: background 0.3s, color 0.3s;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gray-900 text-white flex justify-center items-center min-h-screen"
+  >
+    <div id="root" class="w-full max-w-4xl p-4"></div>
+
+    <script type="text/babel">
+      const { useState } = React;
+
+      function SpotifyBrowserMockup() {
+        const [darkMode, setDarkMode] = useState(true);
+        const [accent, setAccent] = useState("#22c55e");
+        const [songs, setSongs] = useState([
+          { title: "Digital Heartbeat", artist: "AI Dreams" },
+          { title: "Echo Chamber", artist: "Cyber Soul" },
+          { title: "Electric Dawn", artist: "Neon Fields" },
+        ]);
+        const [playing, setPlaying] = useState(false);
+
+        const toggleDarkMode = () => setDarkMode(!darkMode);
+        const addSong = () => {
+          const title = prompt("Song title?");
+          const artist = prompt("Artist?");
+          if (title && artist) setSongs([...songs, { title, artist }]);
+        };
+        const removeSong = (index) =>
+          setSongs(songs.filter((_, i) => i !== index));
+
+        return (
+          <div
+            className={
+              (darkMode ? "bg-gray-900 text-white" : "bg-white text-gray-900") +
+              " w-full rounded-2xl shadow-2xl p-6"
+            }
+          >
+            {/* Header */}
+            <div className="flex justify-between items-center mb-6">
+              <h1 className="text-2xl font-bold" style={{ color: accent }}>
+                Spotify Mockup
+              </h1>
+              <div className="flex items-center gap-3">
+                <label className="text-sm">Accent</label>
+                <input
+                  type="color"
+                  value={accent}
+                  onChange={(e) => setAccent(e.target.value)}
+                  className="w-6 h-6 cursor-pointer"
+                />
+                <button
+                  onClick={toggleDarkMode}
+                  className="px-3 py-1 text-sm rounded-lg border border-gray-500"
+                >
+                  {darkMode ? "Light" : "Dark"}
+                </button>
+              </div>
+            </div>
+
+            {/* Playlist */}
+            <div className="bg-gray-800/50 rounded-xl p-4 mb-6">
+              <h2 className="text-lg font-semibold mb-3">Playlist</h2>
+              {songs.map((song, i) => (
+                <div
+                  key={i}
+                  className="flex justify-between items-center py-2 border-b border-gray-700/40 last:border-0"
+                >
+                  <div>
+                    <p className="font-medium">{song.title}</p>
+                    <p className="text-sm opacity-70">{song.artist}</p>
+                  </div>
+                  <button
+                    onClick={() => removeSong(i)}
+                    className="text-red-400 hover:text-red-500"
+                  >
+                    ✕
+                  </button>
+                </div>
+              ))}
+              <button
+                onClick={addSong}
+                className="mt-3 w-full py-2 rounded-lg"
+                style={{ backgroundColor: accent }}
+              >
+                + Add Song
+              </button>
+            </div>
+
+            {/* Player */}
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="font-semibold">Now Playing</p>
+                <p className="text-sm opacity-70">
+                  {playing ? songs[0]?.title : "—"}
+                </p>
+              </div>
+              <button
+                onClick={() => setPlaying(!playing)}
+                className="px-4 py-2 rounded-lg font-semibold"
+                style={{
+                  backgroundColor: playing ? accent : "transparent",
+                  border: `1px solid ${accent}`,
+                }}
+              >
+                {playing ? "⏸ Pause" : "▶ Play"}
+              </button>
+            </div>
+          </div>
+        );
+      }
+
+      ReactDOM.createRoot(document.getElementById("root")).render(
+        <SpotifyBrowserMockup />
+      );
+    </script>
+  </body>
+</html>
