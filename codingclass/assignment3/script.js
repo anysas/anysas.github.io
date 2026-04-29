@@ -39,9 +39,6 @@ bodiceDrop.addEventListener("drop", (event) => {
   bodicePlaced.src = bodice;
   // the taken bodice becomes gets inserted into bodiceDrop as a child element
   bodiceDrop.appendChild(bodicePlaced);
-
-  dullshine.currentTime = 0;
-  dullshine.play();
 });
 
 // used same code for skirts
@@ -65,9 +62,6 @@ skirtDrop.addEventListener("drop", (event) => {
   const skirtPlaced = document.createElement("img");
   skirtPlaced.src = skirt;
   skirtDrop.appendChild(skirtPlaced);
-
-  dullshine.currentTime = 0;
-  dullshine.play();
 });
 
 // applying the animations
