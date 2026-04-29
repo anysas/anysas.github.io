@@ -7,9 +7,6 @@ const skirtDrop = document.getElementById("skirt_droparea");
 // grabbing audio from webassets
 // https://pixabay.com/sound-effects/shine-7-268909/
 const shine = new Audio("webassets/shine.mp3");
-// https://pixabay.com/sound-effects/shining-anime-sound-effect-240582/
-// Was originally gonna use a fabric or sketching noise when dropping the pieces in but it contrasted alot against the aesthetic I was going for, being that it sounded dull in comparison to the light background. So instead I used this sound effect which sounds like a far away or a less bright glitter. This creates the feeling of the player is on the verge of making a dress idea, then finalising the dress idea/mockup is alot brighter as the creative process is done.
-const dullshine = new Audio("webassets/dullshine.mp3");
 
 // lets bodice be an empty value to be replaced later
 let bodice = null;
@@ -40,8 +37,6 @@ bodiceDrop.addEventListener("drop", (event) => {
   // the taken bodice becomes gets inserted into bodiceDrop as a child element
   bodiceDrop.appendChild(bodicePlaced);
 
-  dullshine.currentTime = 0;
-  dullshine.play();
 });
 
 // used same code for skirts
@@ -66,8 +61,6 @@ skirtDrop.addEventListener("drop", (event) => {
   skirtPlaced.src = skirt;
   skirtDrop.appendChild(skirtPlaced);
 
-  dullshine.currentTime = 0;
-  dullshine.play();
 });
 
 // applying the animations
